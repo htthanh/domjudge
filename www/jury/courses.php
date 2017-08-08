@@ -24,7 +24,7 @@ if( $courses->count() == 0 ) {
 	    "<th scope=\"col\">contest id</th>" .
 	    "<th scope=\"col\">from date</th>" .
 	    "<th scope=\"col\">to date</th>" .
-	    //"<th scope=\"col\">type</th>" .
+	    "<th scope=\"col\">type</th>" .
 	    "<th></th>" .
 	    "</tr>\n</thead>\n<tbody>\n";
 
@@ -43,8 +43,8 @@ if( $courses->count() == 0 ) {
 		        specialchars($row['fromdate'])."</a></td>".
 		    "<td>" . $link .
 		        specialchars($row['todate'])."</a></td>";
-		    //"<td>" . $link .
-		    //    specialchars($row['coursetype'])."</a></td>";
+		    "<td>" . $link .
+		        specialchars($row['coursetype'])."</a></td>";
 		if ( IS_ADMIN ) {
 			echo "<td class=\"editdel\">" .
 			    editLink('course', $row['courseid']) . "&nbsp;" .
