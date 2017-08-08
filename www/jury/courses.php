@@ -21,8 +21,11 @@ if( $courses->count() == 0 ) {
 } else {
 	echo "<table class=\"list sortable\">\n<thead>\n" .
 	    "<tr><th scope=\"col\">course name</th>" .
-	    "<th scope=\"col\">contest id</th><th scope=\"col\">from date</th><th scope=\"col\">to date</th>" .
-	    "<th scope=\"col\">type</th><th></th>" .
+	    "<th scope=\"col\">contest id</th>" .
+	    "<th scope=\"col\">from date</th>" .
+	    "<th scope=\"col\">to date</th>" .
+	    "<th scope=\"col\">type</th>" .
+	    "<th></th>" .
 	    "</tr>\n</thead>\n<tbody>\n";
 
 	while( $row = $courses->next() ) {
