@@ -22,8 +22,8 @@ if( $courses->count() == 0 ) {
 	echo "<table class=\"list sortable\">\n<thead>\n" .
 	    "<tr><th scope=\"col\">course name</th>" .
 	    "<th scope=\"col\">contest id</th>" .
-	    "<th scope=\"col\">from date</th>" .
-	    "<th scope=\"col\">to date</th>" .
+	    "<th scope=\"col\">start date</th>" .
+	    "<th scope=\"col\">end date</th>" .
 	    "<th scope=\"col\">type</th>" .
 	    "<th></th>" .
 	    "</tr>\n</thead>\n<tbody>\n";
@@ -40,11 +40,11 @@ if( $courses->count() == 0 ) {
 		    "<td>" . $link .
 		        specialchars($row['contestid'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['fromdate'])."</a></td>".
+		        specialchars($row['startdate'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['todate'])."</a></td>";
+		        specialchars($row['enddate'])."</a></td>";
 		    "<td>" . $link .
-		        specialchars($row['coursetype'])."</a></td>";
+		        specialchars($row['catid'])."</a></td>";
 		if ( IS_ADMIN ) {
 			echo "<td class=\"editdel\">" .
 			    editLink('course', $row['courseid']) . "&nbsp;" .
