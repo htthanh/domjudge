@@ -7,6 +7,7 @@
  */
 
 require('init.php');
+require(LIBWWWDIR . '/checkers.jury.php');
 
 $id = getRequestID();
 $title = ucfirst((empty($_GET['cmd']) ? '' : specialchars($_GET['cmd']) . ' ') .
