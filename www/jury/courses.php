@@ -40,9 +40,9 @@ if( $courses->count() == 0 ) {
 		    "<td>" . $link .
 		        specialchars($row['contestid'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['startdate'])."</a></td>".
+		        specialchars($row['starttime'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['enddate'])."</a></td>";
+		        specialchars($row['endtime'])."</a></td>";
 		    "<td>" . $link .
 		        specialchars($row['catid'])."</a></td>";
 		if ( IS_ADMIN ) {

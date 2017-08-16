@@ -62,11 +62,11 @@ echo addSelect('data[0][contestid]', $cmap, @$row['cid'], true);
 ?>
 </td></tr>
 
-<tr><td><label for="data_0__endtime_string_">Start date:</label></td>
-<td><?php echo addInput('data[0][startdate_string]', @$row['startdate'], 30, 64, 'required pattern="' . $pattern_datetime . '"')?></td></tr>
+<tr><td><label for="data_0__starttime_string_">Start date:</label></td>
+<td><?php echo addInput('data[0][starttime_string]', @$row['starttime'], 30, 64, 'required pattern="' . $pattern_datetime . '"')?></td></tr>
 
 <tr><td><label for="data_0__endtime_string_">End date:</label></td>
-<td><?php echo addInput('data[0][enddate_string]', @$row['enddate'], 30, 64, 'required pattern="' . $pattern_datetime . '"')?></td></tr>
+<td><?php echo addInput('data[0][endtime_string]', @$row['endtime'], 30, 64, 'required pattern="' . $pattern_datetime . '"')?></td></tr>
 
 <tr><td><label for="data_0__categoryid_">Category:</label></td>
 <td><?php
