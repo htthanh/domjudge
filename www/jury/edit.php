@@ -23,6 +23,7 @@ require(LIBDIR .  '/relations.php');
 
 $t = @$_POST['table'];
 if(!$t)	error ("No table selected.");
+echo $KEYS;
 if(!in_array($t, array_keys($KEYS))) error ("Unknown table.");
 
 $data          =  $_POST['data'];
