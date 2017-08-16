@@ -21,10 +21,10 @@ if( $courses->count() == 0 ) {
 } else {
 	echo "<table class=\"list sortable\">\n<thead>\n" .
 	    "<tr><th scope=\"col\">course name</th>" .
-	    "<th scope=\"col\">contest id</th>" .
+	    "<th scope=\"col\">contest</th>" .
 	    "<th scope=\"col\">start time</th>" .
 	    "<th scope=\"col\">end time</th>" .
-	    "<th scope=\"col\">type</th>" .
+	    "<th scope=\"col\">category</th>" .
 	    "<th></th>" .
 	    "</tr>\n</thead>\n<tbody>\n";
 
