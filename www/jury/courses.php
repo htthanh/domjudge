@@ -9,8 +9,8 @@
 require('init.php');
 $title = 'Courses';
 
-$courses = $DB->q('SELECT c.*, cc.description
-                 FROM course c, course_category cc where c.catid = cc.catid');
+$courses = $DB->q('SELECT c.*, cc.description, ct.name
+                 FROM course c, course_category cc, contest ct where c.catid = cc.catid and c.contestid = ct.cid');
 
 require(LIBWWWDIR . '/header.php');
 
@@ -38,11 +38,11 @@ if( $courses->count() == 0 ) {
 		    "<td class=\"username\">" . $link .
 		        specialchars($row['coursename'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['contestid'])."</a></td>".
+		        specialchars($row['name'])."</a></td>".
 		    "<td>" . $link .
 		        specialchars($row['starttime_string'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['starttime_string'])."</a></td>".
+		        specialchars($row['endtime_string'])."</a></td>".
 		    "<td>" . $link .
 		        specialchars($row['description'])."</a></td>";
 		if ( IS_ADMIN ) {
