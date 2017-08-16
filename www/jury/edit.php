@@ -23,7 +23,6 @@ require(LIBDIR .  '/relations.php');
 
 $t = @$_POST['table'];
 if(!$t)	error ("No table selected.");
-print_r ($KEYS);
 if(!in_array($t, array_keys($KEYS))) error ("Unknown table.");
 
 $data          =  $_POST['data'];
@@ -118,6 +117,7 @@ if ( ! isset($_POST['cancel']) ) {
 			}
 			check_sane_keys($prikey);
 
+			printf("UPDATE $t SET %S WHERE %S", $itemdata, $prikey);
 			$DB->q("UPDATE $t SET %S WHERE %S", $itemdata, $prikey);
 			auditlog($t, implode(', ', $prikey), 'updated');
 		}
