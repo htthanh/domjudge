@@ -10,7 +10,7 @@ require('init.php');
 $title = 'Courses';
 
 $courses = $DB->q('SELECT c.*
-                 FROM bg_course c');
+                 FROM course c');
 
 require(LIBWWWDIR . '/header.php');
 

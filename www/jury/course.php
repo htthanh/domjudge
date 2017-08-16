@@ -36,7 +36,7 @@ if ( !empty($cmd) ):
     echo "<table>\n";
 
     if ( $cmd == 'edit' ) {
-        $row = $DB->q('MAYBETUPLE SELECT * FROM bg_course WHERE courseid = %i', $id);
+        $row = $DB->q('MAYBETUPLE SELECT * FROM course WHERE courseid = %i', $id);
 		if ( !$row ) error("Missing or invalid course id");
 
 		echo "<tr><td>Course ID:</td><td>" .
@@ -70,14 +70,14 @@ echo addSelect('data[0][contestid]', $cmap, @$row['cid'], true);
 
 <tr><td><label for="data_0__categoryid_">Category:</label></td>
 <td><?php
-$cmap = $DB->q("KEYVALUETABLE SELECT catid, description FROM bg_course_category ORDER BY catid");
+$cmap = $DB->q("KEYVALUETABLE SELECT catid, description FROM course_category ORDER BY catid");
 echo addSelect('data[0][catid]', $cmap, @$row['catid'], true);
 ?>
 </td></tr>
 </table>
 <?php
 echo addHidden('cmd', $cmd) .
-    addHidden('table','bg_course') .
+    addHidden('table','course') .
     addSubmit('Save') .
     addSubmit('Cancel', 'cancel', null, true, 'formnovalidate') .
     addEndForm();
