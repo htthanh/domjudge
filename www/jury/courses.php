@@ -9,8 +9,8 @@
 require('init.php');
 $title = 'Courses';
 
-$courses = $DB->q('SELECT c.*
-                 FROM course c');
+$courses = $DB->q('SELECT c.*, cc.description
+                 FROM course c, course_category cc where c.catid = cc.catid');
 
 require(LIBWWWDIR . '/header.php');
 
@@ -42,9 +42,9 @@ if( $courses->count() == 0 ) {
 		    "<td>" . $link .
 		        specialchars($row['starttime_string'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['starttime_string'])."</a></td>";
+		        specialchars($row['starttime_string'])."</a></td>".
 		    "<td>" . $link .
-		        specialchars($row['catid'])."</a></td>";
+		        specialchars($row['description'])."</a></td>";
 		if ( IS_ADMIN ) {
 			echo "<td class=\"editdel\">" .
 			    editLink('course', $row['courseid']) . "&nbsp;" .
